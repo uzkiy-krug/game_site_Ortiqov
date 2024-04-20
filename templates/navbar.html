@@ -1,8 +1,10 @@
+{% load static %}
+
 <header class="header-section">
     <div class="container">
 
-        <a class="site-logo" href="index-2.html">
-            <img src="img/logo.png" alt>
+        <a class="site-logo" href="{% url 'main:index' %}">
+            <img src="{% static 'img/logo.png' %}" alt>
         </a>
         <div class="user-panel">
             <a href="#">Login</a> / <a href="#">Register</a>
@@ -14,11 +16,11 @@
 
         <nav class="main-menu">
             <ul>
-                <li><a href="index-2.html">Home</a></li>
-                <li><a href="../game/games.html">Games</a></li>
+                <li><a href="{% url 'main:index' %}">Home</a></li>
+                <li><a href="{% url 'game:game-list' %}">Games</a></li>
                 <li><a href="../blog/blogs.html">Blog</a></li>
-                <li><a href="community.html">Forums</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="{% url 'main:community' %}">Forums</a></li>
+                <li><a href="{% url 'main:contact' %}">Contact</a></li>
             </ul>
         </nav>
     </div>
